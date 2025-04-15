@@ -21,6 +21,9 @@ class RecipeType extends AbstractType
             ->add('instructions',null, [
                 'attr' => ['class'=> 'form-control my-2', 'placeholder'=>'Recipe Instructions']
             ])
+            ->add('imageURL',null, [
+                'attr' => ['class'=> 'form-control my-2', 'placeholder'=>'Recipe ImageURL']
+            ])
         ;
     }
 

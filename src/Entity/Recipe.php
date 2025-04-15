@@ -23,6 +23,9 @@ class Recipe
     #[ORM\Column(type: Types::TEXT)]
     private ?string $instructions = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $imageURL = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -60,6 +63,18 @@ class Recipe
     public function setInstructions(string $instructions): static
     {
         $this->instructions = $instructions;
+
+        return $this;
+    }
+
+    public function getImageURL(): ?string
+    {
+        return $this->imageURL;
+    }
+
+    public function setImageURL(string $imageURL): static
+    {
+        $this->imageURL = $imageURL;
 
         return $this;
     }
