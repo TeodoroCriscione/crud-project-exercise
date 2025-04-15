@@ -5,18 +5,27 @@
 {% block body %}
 <div class="container">
     <h1 class="my-5">Recipe</h1>
-    <div>
-        <div class="card" style="width: 24rem;">
+    <div class="mx-auto d-flex justify-content-center">
+        <div class="card h-100 shadow rounded-4 overflow-hidden" style="width: 42rem;">
             <div class="card-body">
-            <img src={{recipe.imageURL}} class="card-img-top" alt="coming-soon">
+            <img src={{recipe.imageURL}} class="card-img-top my-5" alt="image">
+            <div class="d-flex justify-content-center">
+                <iframe width="560" height="315" class="my-5 mx-auto"
+                src={{recipe.videoURL}}
+                title="video player"
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen>
+                </iframe>
+            </div>
             <h5 class="card-title">{{ recipe.title }}</h5>
             <p class="card-text"><span class="fw-bold"> Ingredients: </span>{{ recipe.ingredients }}</p>
             <p class="card-text"><span class="fw-bold"> Instructions: </span>{{ recipe.instructions }}</p>
-            <a class="btn btn-warning" href="{{ path('app_recipe_edit', {'id': recipe.id}) }}">edit</a>
+            <a class="btn btn-warning" href="{{ path('app_recipe_edit', {'id': recipe.id}) }}">Edit</a>
             </div>
         </div>
     </div>
-    <div class="d-flex my-5 justify-content-start">
+    <div class="d-flex my-5 justify-content-center">
         <a class="btn btn-secondary mx-5" href="{{ path('app_recipe_index') }}">Back to list</a>
         {{ include('recipe/_delete_form.html.twig') }}
     </div>

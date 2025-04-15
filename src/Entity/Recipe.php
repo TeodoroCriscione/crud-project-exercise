@@ -26,6 +26,9 @@ class Recipe
     #[ORM\Column(length: 255)]
     private ?string $imageURL = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $videoURL = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -75,6 +78,18 @@ class Recipe
     public function setImageURL(string $imageURL): static
     {
         $this->imageURL = $imageURL;
+
+        return $this;
+    }
+
+    public function getVideoURL(): ?string
+    {
+        return $this->videoURL;
+    }
+
+    public function setVideoURL(string $videoURL): static
+    {
+        $this->videoURL = $videoURL;
 
         return $this;
     }

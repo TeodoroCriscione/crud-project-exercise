@@ -24,6 +24,9 @@ class RecipeType extends AbstractType
             ->add('imageURL',null, [
                 'attr' => ['class'=> 'form-control my-2', 'placeholder'=>'Recipe ImageURL']
             ])
+            ->add('videoURL',null, [
+                'attr' => ['class'=> 'form-control my-2', 'placeholder'=>'Recipe VideoURL']
+            ])
         ;
     }
 
